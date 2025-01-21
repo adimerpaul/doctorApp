@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:http/http.dart' as http;
 import '../utils/color.dart';
 
 class Login extends StatefulWidget {
@@ -12,6 +15,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  _handleGoogleSignIn() async {
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
@@ -61,9 +68,7 @@ class _LoginState extends State<Login> {
                       ),
                       SizedBox(height: 20),
                       ElevatedButton.icon(
-                        onPressed: () {
-                          print('Iniciar Sesion');
-                        },
+                        onPressed: _handleGoogleSignIn,
                         icon: Image.asset(
                           'assets/images/google_icon.png',
                           height: 30,
